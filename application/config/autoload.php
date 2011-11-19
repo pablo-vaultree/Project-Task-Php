@@ -1,11 +1,11 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 $autoload['packages'] = array();
-$autoload['libraries'] = array('database');
+$autoload['libraries'] = array('database', 'session');
 $autoload['helper'] = array('url', 'assets_helper', 'form', 'html');
 $autoload['config'] = array();
 $autoload['language'] = array();
-$autoload['model'] = array('usuario_model', 'projeto_model', 'tarefa_model');
+$autoload['model'] = array();//array('usuario_model', 'projeto_model', 'tarefa_model');
 
 
 /* End of file autoload.php */

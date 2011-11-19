@@ -4,19 +4,29 @@ class Login extends CI_Controller {
 	
 	public function index()
 	{
-		$data['css'] = load_css('style.css');
-		$this->load->view('login_view', $data);
+		$data['content'] = "login_view";		
+		$this->load->view('includes/template', $data);		
 	}
 	
 	public function logon()
-	{				
-		$data = array(
-			'css' => load_css('style.css'),
-			'username' => $this->input->post('username'),
-			'password' => $this->input->post('password')	
-		);
+	{
 		
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
 		
-		$this->load->view('login_view', $data);
+		$this->load->model('usuario_model');				
+		
+		$exist = $this->usuario_model->usuario_existe($username, $password);
+			
+		if ($exist) {
+			$data = array(
+				'username' => $username,
+				'is_logged' => true
+			);
+			$this->session->set_userdata($data);
+			redirect('usuario/projetos');	
+		}else {
+			$this->index();
+		}												
 	}
 }
