@@ -8,9 +8,15 @@ class Login extends CI_Controller {
 		$this->load->view('login_view', $data);
 	}
 	
-	public function Logon()
-	{
-		$data['css'] = load_css('style.css');
+	public function logon()
+	{				
+		$data = array(
+			'css' => load_css('style.css'),
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password')	
+		);
+		
+		
 		$this->load->view('login_view', $data);
 	}
 }

@@ -2,7 +2,7 @@
 
 $autoload['packages'] = array();
 $autoload['libraries'] = array('database');
-$autoload['helper'] = array('url', 'assets_helper');
+$autoload['helper'] = array('url', 'assets_helper', 'form', 'html');
 
 $autoload['config'] = array();
 
@@ -19,7 +19,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array();
+$autoload['model'] = array('usuario_model', 'projeto_model', 'tarefa_model');
 
 
 /* End of file autoload.php */

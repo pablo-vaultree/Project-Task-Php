@@ -12,7 +12,7 @@
 	<h1>Bem-vindo ao ProjectTask!</h1>
 
 	<div id="body">
-		<form action="<?=base_url()?>Login/Logon/" method="post">
+		<?=form_open('login/logon');?>		
 			<p>
 				Login
 				<input type="text" id="username" name="username"/>
@@ -28,7 +28,7 @@
 			
 			Não possui cadastro? <a href="">Clique aqui</a> e faça seu cadastro!
 			
-		</form>
+		<?=form_close();?>
 	</div>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
