@@ -1,7 +1,7 @@
 <?php
 
 
-Class Usuario extends CI_Controller
+Class Projeto extends CI_Controller
 {
 	
 	function __construct()
@@ -10,12 +10,16 @@ Class Usuario extends CI_Controller
 		$this->is_logged();		
 	}
 	
-	function dashboard()
+	function index($id)
 	{
-		
-		$data['usuario'] = $this->session->userdata('username'); 		
-		$data["projetos"] = $this->projeto_model->buscar_projetos_usuario($data['usuario']);						 	
-		$data['content'] = 'usuario/dashboard_view';		
+		if (!isset($id)) {
+			redirect('usuario/dashboard');
+		}
+		 		
+		$data["projeto"] = $this->projeto_model->buscar_projeto($id);
+		$data["tarefas"] = $this->tarefa_model->buscar_tarefas_projeto($id);
+											
+		$data['content'] = 'projeto/projeto_view';		
 		$this->load->view('includes/template', $data);		
 	}
 	

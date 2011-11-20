@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tempo de Geração: 20/11/2011 às 16h32min
+-- Tempo de Geração: 15/11/2011 às 21h46min
 -- Versão do Servidor: 5.1.58
 -- Versão do PHP: 5.3.6-13ubuntu3.2
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `projeto` (
   `data` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `data_encerramento` date NOT NULL,
   `observacao` text COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`seq_projeto`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Tabela principal para guardar os projetos' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -43,13 +43,13 @@ CREATE TABLE IF NOT EXISTS `projeto` (
 --
 
 CREATE TABLE IF NOT EXISTS `tarefa` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_projeto` int(11) NOT NULL,
+  `seq_tarefa` int(11) NOT NULL AUTO_INCREMENT,
+  `seq_projeto` int(11) NOT NULL,
   `nome` varchar(128) COLLATE utf8_bin NOT NULL,
   `descricao` varchar(1024) COLLATE utf8_bin NOT NULL,
   `data` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `data_encerramento` date NOT NULL,
-  PRIMARY KEY (`id`,`id_projeto`)
+  PRIMARY KEY (`seq_tarefa`,`seq_projeto`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -64,15 +64,6 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `email` varchar(1024) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`username`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Extraindo dados da tabela `usuario`
---
-
-INSERT INTO `usuario` (`username`, `password`, `email`) VALUES
-('root', 'root', 'root@root.com'),
-('pablo', 'pablo', 'pablo@pablo.com'),
-('teste', 'teste', 'teste');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

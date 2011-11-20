@@ -6,6 +6,11 @@ body
 	font-family: arial;	
 }
 
+#container{
+	margin: auto;
+	width: 900px;
+}
+
 #login_form
 {
 	width: 300px;

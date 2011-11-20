@@ -73,6 +73,12 @@ class Login extends CI_Controller {
 		}												
 	}
 
+	public function logoff()
+	{
+		$this->session->sess_destroy();
+		$this->index();	
+			
+	}
 	
 	
 	public function permission_denied()
@@ -80,9 +86,6 @@ class Login extends CI_Controller {
 		$data['content'] = 'permissao_view';
 		$this->load->view('includes/template', $data);		
 	}
-	
-	
-	
-	
+					
 			
 }
