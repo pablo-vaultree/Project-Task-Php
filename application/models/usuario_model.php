@@ -18,9 +18,8 @@ class Usuario_model extends CI_Model
 		}
 			
 	}
-	
-	/*
-	function buscar_usuarios()
+		
+	function buscar_todos_usuarios()
 	{		
 		$query = $this->db->get('usario');
 		return $query->result();
@@ -43,7 +42,7 @@ class Usuario_model extends CI_Model
 	{
 		$this->db->where('username', $key);
 		$this->db->delete('usuario', $data);		
-	}*/
+	}
 	
 }
 

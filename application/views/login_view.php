@@ -12,7 +12,7 @@
 			</p>
 			<P>				
 				<input type="submit" name="login" id="login" value="Logar"/>
-				<a href="">Cadastre-se</a>						
+				<?php echo anchor('login/cadastro', 'Cadastre-se') ?>						
 			</P>								
 		<?=form_close();?>
 	</div>

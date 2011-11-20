@@ -21,7 +21,7 @@ h1,h2,h3,h4,h5
 {
 	margin-top: 0;
 	font-family: Arial black, Arial;
-	text-align: : center;	
+	text-align: center;	
 }
 
 h1
@@ -63,14 +63,14 @@ input[type=submit]:hover, form a:hover{
 
 .error
 {
-	color: #393939;
+	color: #851008;
 	font-size:  15px;
 }
 
 fieldset
 {
 	
-	width: :300px;
+	width: 300px;
 	margin: auto;
 	margin-bottom: 2em;
 	display: block;
