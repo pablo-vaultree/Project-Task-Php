@@ -14,7 +14,7 @@
 	<?if (isset($projetos)) {?>
 		<div id="projetos">					
 			<?foreach ($projetos as $projeto) {
-				echo anchor('projeto/'.$projeto->id, $projeto->nome);
+				echo anchor('projeto/index/'.$projeto->id, $projeto->nome);
 			}?>	
 		</div>
 	<?}else{?>
@@ -22,6 +22,5 @@
 			Sem projetos? <?= anchor('projeto/novo', 'Novo Projeto') ?>
 		</p>				
 	<?}?>
-	
-	
+		
 </div>
