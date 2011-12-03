@@ -1,7 +1,7 @@
 <?php
 
 
-class Tarefa_model extends Model
+class Tarefa_model extends CI_Model
 {
 	public function buscar_tarefas_projeto($projeto)
 	{

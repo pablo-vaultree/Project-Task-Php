@@ -7,27 +7,20 @@ Class Usuario extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->is_logged();		
+		$this->usuario_model->is_logged();	
 	}
 	
 	function dashboard()
-	{
+	{				
+		$data['usuario'] = $this->session->userdata('username'); 
+		$result = $this->projeto_model->buscar_projetos_usuario($data['usuario']);
 		
-		$data['usuario'] = $this->session->userdata('username'); 		
-		$data["projetos"] = $this->projeto_model->buscar_projetos_usuario($data['usuario']);						 	
+		if ($result != 0) 
+			$data["projetos"] = $result;	
+							
 		$data['content'] = 'usuario/dashboard_view';		
-		$this->load->view('includes/template', $data);		
-	}
-	
-	function is_logged()
-	{
-		$logged = $this->session->userdata('is_logged');
-		
-		if (!isset($logged) || $logged == false) {
-			redirect('login/permission_denied');			
-		}
-	}
-	
+		$this->load->view('includes/template', $data);
+	}	
 }
 
 

@@ -9,12 +9,33 @@ body
 #container{
 	margin: auto;
 	width: 900px;
+	background: #F0F0F0;
+	border: : 1px solid white;
+	margin: auto;
+	padding:  1em;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+#header
+{
+	
+	margin: auto;	
+	background: red;
+}
+
+#dashboard
+{
+	margin: auto;	
+	background: #FFFFFF;
+	position: relative;
+	
 }
 
 #login_form
 {
 	width: 300px;
-	background: #f0f0f0;
+	background: #eee;
 	border: : 1px solid white;
 	margin: 250px auto 0;
 	padding:  1em;

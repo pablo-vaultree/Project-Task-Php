@@ -44,6 +44,15 @@ class Usuario_model extends CI_Model
 		$this->db->delete('usuario', $data);		
 	}
 	
+	function is_logged()
+	{
+		$logged = $this->session->userdata('is_logged');
+		
+		if (!isset($logged) || $logged == false) {
+			redirect('login/permission_denied');			
+		}
+	}
+	
 }
 
 
