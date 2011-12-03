@@ -40,7 +40,7 @@ class Login extends CI_Controller {
 		
 		$this->load->library('form_validation');
 		
-		$this->form_validation->set_rules('username', 'Login', 'trim|required');
+		$this->form_validation->set_rules('username', 'Login', 'min_length[3]|unique[usuario.username]|trim|required');
 		$this->form_validation->set_rules('password', 'Senha', 'trim|required|min_lenght(4)');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 		

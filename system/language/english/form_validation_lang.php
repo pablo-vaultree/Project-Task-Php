@@ -2,7 +2,7 @@
 
 $lang['required']			= "O campo %s é obrigatório.";
 $lang['isset']				= "O campo %s deve ter um valor.";
-$lang['valid_email']		= "O campo %s deve conter um enderesso de email válido.";
+$lang['valid_email']		= "O campo %s deve conter um endereço de email válido.";
 $lang['valid_emails']		= "Todos os %s devem conter válidos enderessos de email.";
 $lang['valid_url']			= "O campo %s deve conter uma URL válida.";
 $lang['valid_ip']			= "O campo %s deve conter um IP válido.";

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <title>Test Suite</title>
+</head>
+<body>
+<table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
+<tr><td><b>Test Suite</b></td></tr>
+<tr><td><a href="informou_dados">informou_dados</a></td></tr>
+<tr><td><a href="informou_nome">informou_nome</a></td></tr>
+<tr><td><a href="informou_senha">informou_senha</a></td></tr>
+<tr><td><a href="informou_email">informou_email</a></td></tr>
+<tr><td><a href="informou_email_correto">informou_email_correto</a></td></tr>
+<tr><td><a href="usuario_ja_existe">usuario_ja_existe</a></td></tr>
+<tr><td><a href="informou_dados_corretos">informou_dados_corretos</a></td></tr>
+</tbody></table>
+</body>
+</html>
