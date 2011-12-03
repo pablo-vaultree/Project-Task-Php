@@ -26,9 +26,10 @@
 			}?>		
 		<?}else{?>
 			<p>
-				Não existem tarefas cadastradas para este projeto. <?= anchor('tarefa/nova', 'Nova Tarefa')?>
+				Não existem tarefas cadastradas para este projeto.
 			</p>
 		<?}?>
 		
+		<?= anchor('tarefa/novo/'.$projeto->id, 'Nova Tarefa')?>
 	</div>
 </div>

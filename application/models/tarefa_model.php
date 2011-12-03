@@ -9,11 +9,18 @@ class Tarefa_model extends CI_Model
 		$query = $this->db->get('tarefa');
 		return $query->result();
 	}
+	
+	function buscar_tarefa($id)
+	{
+		$this->db->where('id', $id);
+		$query = $this->db->get('tarefa');
+		return $query->row();		
+	}
+	
+	function adicionar_tarefa($data)
+	{
+		$this->db->insert('tarefa', $data);
+		
+	}	
 }
-
-
-
-
-
-
 ?>

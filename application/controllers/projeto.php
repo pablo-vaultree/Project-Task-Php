@@ -17,7 +17,7 @@ Class Projeto extends CI_Controller
 		}
 		 		
 		$data["projeto"] = $this->projeto_model->buscar_projeto($id);
-		//$data["tarefas"] = $this->tarefa_model->buscar_tarefas_projeto($id);
+		$data["tarefas"] = $this->tarefa_model->buscar_tarefas_projeto($id);
 											
 		$data['content'] = 'projeto/projeto_view';		
 		$this->load->view('includes/template', $data);		
