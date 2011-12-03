@@ -1,1 +1,1 @@
-<div>Você deve estar logaddo para acessar está area!</div>
+<div>Você deve estar logado para acessar está area!</div>
