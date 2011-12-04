@@ -1,3 +1,8 @@
+<?
+	if (!isset($erro)) {
+		$erro = "";	
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +28,8 @@
 				<P>				
 					<input type="submit" name="login" id="login" value="Logar"/>
 					<?php echo anchor('login/cadastro', 'Cadastre-se') ?>						
-				</P>								
+				</P>			
+				<div class="error"><?=$erro?></div>					
 			<?=form_close();?>
 		</div>
 		

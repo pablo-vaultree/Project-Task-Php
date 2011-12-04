@@ -1,7 +1,7 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 $autoload['packages'] = array();
-$autoload['libraries'] = array('database', 'session');
+$autoload['libraries'] = array('database', 'session', 'form_validation');
 $autoload['helper'] = array('url', 'assets_helper', 'form', 'html');
 $autoload['config'] = array();
 $autoload['language'] = array();

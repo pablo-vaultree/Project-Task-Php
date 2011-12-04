@@ -11,7 +11,8 @@ Class Usuario extends CI_Controller
 	}
 	
 	function dashboard()
-	{				
+	{
+		$data['message'] = '';				
 		$data['usuario'] = $this->session->userdata('username'); 
 		$result = $this->projeto_model->buscar_projetos_usuario($data['usuario']);
 		

@@ -24,7 +24,9 @@ class Login extends CI_Controller {
 			$this->session->set_userdata($data);
 			redirect('usuario/dashboard');	
 		}else {
-			$this->index();
+			$data['content'] = "login_view";		
+			$data['erro'] = "Usuário/Senha não são válidos.";
+			$this->load->view('login_view', $data);
 		}												
 	}
 
@@ -36,14 +38,8 @@ class Login extends CI_Controller {
 	
 	
 	public function cadastrar_usuario()
-	{
-		
-		$this->load->library('form_validation');
-		
-		$this->form_validation->set_rules('username', 'Login', 'min_length[3]|unique[usuario.username]|trim|required');
-		$this->form_validation->set_rules('password', 'Senha', 'trim|required|min_lenght(4)');
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-		
+	{				
+		$this->_set_rules();
 		if ($this->form_validation->run() == false) 
 		{
 			$data['content'] = 'cadastro_view';			
@@ -51,7 +47,7 @@ class Login extends CI_Controller {
 		}
 		else 
 		{
-				$data = array(
+			$data = array(
 				'username' => $this->input->post('username'),
 				'password' => $this->input->post('password'),
 				'email' => $this->input->post('email')
@@ -67,12 +63,19 @@ class Login extends CI_Controller {
 				);
 				$this->session->set_userdata($data);
 				redirect('usuario/dashboard');	
-			}else {
+			}else {				
 				$this->index();
 			}		
 		}												
 	}
-
+	
+	function _set_rules()
+	{
+		$this->form_validation->set_rules('username', 'Login', 'min_length[3]|unique[usuario.username]|trim|required');
+		$this->form_validation->set_rules('password', 'Senha', 'trim|required|min_lenght(4)');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');			
+	}
+	
 	public function logoff()
 	{
 		$this->session->sess_destroy();
@@ -85,7 +88,5 @@ class Login extends CI_Controller {
 	{
 		$data['content'] = 'permissao_view';
 		$this->load->view('includes/template', $data);		
-	}
-					
-			
+	}						
 }

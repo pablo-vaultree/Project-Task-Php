@@ -22,6 +22,7 @@
 		
 		<input type="hidden" name="projetoId" value="<?=$projeto?>" />
 		<?= validation_errors('<p class="error">');?>
+		<?=$message;?>
 	</fieldset>
 	<p>
 		<?echo anchor('projeto/index/'.$projeto, 'Voltar para o projeto');?>

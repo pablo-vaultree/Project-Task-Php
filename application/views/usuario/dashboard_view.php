@@ -1,26 +1,37 @@
 <?
 $atts_links = array('class' => 'menuButton');
 ?>
-
-<div id="dashboard">
-	
+<h3>
+	Dashboard
+</h3>
+<div id="dashboard">	
+	<?=$message?>
 	<p>
 		<?= anchor('projeto/novo', 'Novo Projeto', $atts_links) ?>		
 	</p>		
-	<?if (isset($projetos)) {?>
-		<div id="projetos">					
-			<ul>
-			<?foreach ($projetos as $projeto) {?>
-				<li>
-					<?= anchor('projeto/index/'.$projeto->id, $projeto->nome, $atts_links);?>
-				</li>				
-			<?}?>	
-			</ul>
-		</div>
-	<?}else{?>
-		<p>
-			Sem projetos cadastrados, crie um novo e comece a organizar-se! 
-		</p>				
-	<?}?>
 	
+	<div id='projetos'>	
+		<?=$message?>	
+		<fieldset>
+			<legend>Seus projetos</legend>				
+			<?if (isset($projetos) && !empty($projetos)) {?>			
+				<table>
+				<?foreach ($projetos as $projeto) {?>
+					<tr>						
+						<td>
+							<?echo anchor('projeto/index/'.$projeto->id, $projeto->nome);?>
+						</td>
+						<td>
+							<?= $projeto->data_encerramento;?>
+						</td>
+					</tr>				
+				<?}?>
+				</table>					
+			<?}else{?>
+				<p>
+					Sem projetos cadastrados, crie um novo e comece a organizar-se! 
+				</p>
+			<?}?>
+		</fieldset>						
+	</div>	
 </div>

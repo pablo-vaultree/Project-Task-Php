@@ -38,10 +38,10 @@ class Usuario_model extends CI_Model
 		$this->db->update('usuario', $data);		
 	}
 	
-	function exlcuir_usuario($key, $data)
+	function excluir_usuario($key)
 	{
 		$this->db->where('username', $key);
-		$this->db->delete('usuario', $data);		
+		$this->db->delete('usuario');		
 	}
 	
 	function is_logged()

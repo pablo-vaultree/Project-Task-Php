@@ -102,10 +102,6 @@ input[type-text], input[type-password]
 	-moz-box-shadow: 0 1px 0 #fff;	
 	-webkit-box-shadow: 0 1px 0 #fff;	
 }
-.menuButton a:hover{
-	background: #820c03;	
-	cursor: pointer;
-}
 
 .menuButton, .menuButton a
 {
@@ -123,7 +119,8 @@ input[type-text], input[type-password]
 	-webkit-box-shadow: 0 1px 0 #fff;	
 }
 
-.menuButton a:hover{
+#tarefas a:hover
+{
 	background: #287368;	
 	cursor: pointer;
 }
@@ -162,6 +159,17 @@ fieldset
 	margin-bottom: 2em;
 	display: block;
 	
+}
+
+ul li 
+{
+	text-decoration: none;
+	list-style-type: none;
+	padding: 8px;	
+}
+#tarefas ul
+{	
+	padding: 0px;	
 }
 
 #info

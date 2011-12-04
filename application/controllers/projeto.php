@@ -15,7 +15,8 @@ Class Projeto extends CI_Controller
 		if (!isset($id)) {
 			redirect('usuario/dashboard');
 		}
-		 		
+		$data["message"] = '';			
+		
 		$data["projeto"] = $this->projeto_model->buscar_projeto($id);
 		$data["tarefas"] = $this->tarefa_model->buscar_tarefas_projeto($id);
 											
@@ -31,18 +32,42 @@ Class Projeto extends CI_Controller
 	
 	public function incluir()
 	{
-		
+		$this->load->helper('date');		
+		$dt_fim = $this->input->post('dt_fim');				
+		$datestring = "%Y-%m-%d";
+		$dt_fim = mdate($datestring, strtotime($dt_fim));		
 		$data = array(
 			'nome' => $this->input->post('nome'),
 			'username' => $this->session->userdata('username'),
-			'data_encerramento' => $this->input->post('dt_fim'),
+			'data_encerramento' => $dt_fim,
 			'observacao' => $this->input->post('obs') 		
 		);
 		
-		$this->projeto_model->adicionar_projeto($data);
+		$this->_set_rules();
 		
-		$data['content'] = 'usuario/dashboard';		
-		$this->load->view('includes/template', $data);		
+		if ($this->form_validation->run() == false) 
+		{
+			$data['message'] = '';	
+			$this->novo();
+		} else {
+			$this->projeto_model->adicionar_projeto($data);
+			$data['message'] = '<div class="Success">Projeto incluido com sucesso!</div>';
+			redirect('usuario/dashboard');
+		}									
+	}
+	
+	function _set_rules()
+	{
+		$this->form_validation->set_rules('nome', 'Nome', 'min_length[5]|trim|required');
+		$this->form_validation->set_rules('dt_fim', 'Data encerramento', 'trim|required');
+		$this->form_validation->set_rules('obs', 'Observacao', 'trim|required');			
+	}
+	
+	public function excluir($id)
+	{
+		$this->projeto_model->excluir_projeto($id);				
+		$this->session->set_flashdata('message', '<div class="Success">Projeto excluido com sucesso!</div>');		
+		redirect('usuario/dashboard');
 	}
 }
 

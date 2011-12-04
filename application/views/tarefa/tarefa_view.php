@@ -5,15 +5,15 @@ $atts_links = array('class' => 'menuButton');
 	<fieldset>
 		<legend>Informações da tarefa: <b><?=$tarefa->nome?></b></legend>		
 		<p>
-			Data:<b><?=$tarefa->data?></b>
+			Data: <b><?=$tarefa->data?></b>
 		</p>
 		
 		<p>
-			Projeto:<b><?=$projeto->nome?></b>
+			Projeto: <b><?=$projeto->nome?></b>
 		</p>
 		
 		<p>
-			Previsão encerramento:<b><?=$tarefa->data_encerramento?></b>
+			Previsão encerramento: <b><?=$tarefa->data_encerramento?></b>
 		</p>
 		
 		<p>
