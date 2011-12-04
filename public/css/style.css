@@ -7,28 +7,50 @@ body
 }
 
 #container{
-	margin: auto;
-	width: 900px;
+	margin: 27px auto;
+	width: 500px;	
+	min-height: 250px;
 	background: #F0F0F0;
-	border: : 1px solid white;
-	margin: auto;
+	border: : 1px solid white;	
+	padding:  1em;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+#container-login{
+	margin: 250px auto;
+	width: 350px;
+	min-height:250px;
+	background: #F0F0F0;
+	border: : 1px solid white;	
 	padding:  1em;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 }
 
 #header
+{			
+}
+
+#footer
+{		
+	font-style: italic;	
+}
+
+#content
 {
+	margin-top: 35px;
+	margin-bottom: 20px;	
+	padding: 1em;
+	min-height:250px;	
+	border: 1px solid;	
+	position: relative;
 	
-	margin: auto;	
-	background: red;
 }
 
 #dashboard
 {
-	margin: auto;	
-	background: #FFFFFF;
-	position: relative;
+	width: 300px;
 	
 }
 
@@ -36,8 +58,7 @@ body
 {
 	width: 300px;
 	background: #eee;
-	border: : 1px solid white;
-	margin: 250px auto 0;
+	border: : 1px solid white;	
 	padding:  1em;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -66,6 +87,46 @@ input[type-text], input[type-password]
 	-webkit-border-radius: 1px;
 }
 
+.sairLink
+{
+	border: none;
+	margin-right: 1em;
+	padding:  6px;
+	text-decoration: none;
+	font-size: 12px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	background: #c41205;  
+	color: #fff;
+	box-shadow: 0 1px 0 #fff;
+	-moz-box-shadow: 0 1px 0 #fff;	
+	-webkit-box-shadow: 0 1px 0 #fff;	
+}
+.menuButton a:hover{
+	background: #820c03;	
+	cursor: pointer;
+}
+
+.menuButton, .menuButton a
+{
+	border: none;
+	margin-right:  1em;
+	padding:  6px;
+	text-decoration: none;
+	font-size: 12px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	background: #3480aa;  
+	color: #fff;
+	box-shadow: 0 1px 0 #fff;
+	-moz-box-shadow: 0 1px 0 #fff;	
+	-webkit-box-shadow: 0 1px 0 #fff;	
+}
+
+.menuButton a:hover{
+	background: #287368;	
+	cursor: pointer;
+}
 
 input[type=submit], form a
 {
@@ -76,7 +137,7 @@ input[type=submit], form a
 	font-size: 12px;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
-	background: #348075;  
+	background: #3480aa;  
 	color: #fff;
 	box-shadow: 0 1px 0 #fff;
 	-moz-box-shadow: 0 1px 0 #fff;	
@@ -108,4 +169,13 @@ fieldset
 	background:  #e3e3e3;
 	border-top: 1px solid #fff;	
 	position: absolute;
+}
+
+.left
+{
+	float: left;	
+}
+.right
+{
+	float: right;
 }

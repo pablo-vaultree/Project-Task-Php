@@ -1,6 +1,6 @@
-<fieldset>
-	<legend>Informe os dados da nova tarefa</legend>
-	<?=form_open('tarefa/incluir');?>		
+<?=form_open('tarefa/incluir');?>
+	<fieldset>
+		<legend>Informe os dados da nova tarefa</legend>		
 		<p>
 			Título<br/>
 			<input type="text" id="nome" name="nome"/>
@@ -8,7 +8,7 @@
 		
 		<p>
 			Descrição<br/>
-			<textarea cols="15" rows="5" id="descricao" name="descricao"></textarea>
+			<textarea cols="40" rows="10" id="descricao" name="descricao"></textarea>
 		</p>
 		
 		<p>
@@ -22,6 +22,9 @@
 		
 		<input type="hidden" name="projetoId" value="<?=$projeto?>" />
 		<?= validation_errors('<p class="error">');?>
-							
-	<?=form_close();?>
-</fieldset>
+	</fieldset>
+	<p>
+		<?echo anchor('projeto/index/'.$projeto, 'Voltar para o projeto');?>
+	</p>	
+<?=form_close();?>
+

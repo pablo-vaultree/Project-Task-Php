@@ -12,13 +12,16 @@
 		</p>
 		<p>
 			Observações<br/>
-			<textarea cols="15" rows="5" id="obs" name="obs"></textarea>
+			<textarea cols="40" rows="10" id="obs" name="obs"></textarea>
 		</p>
 		
 		<P>				
 			<input type="submit" name="salvar" id="salvar" value="Salvar"/>								
 		</P>			
 		<?= validation_errors('<p class="error">');?>
-							
+		
+		<p>
+			<?echo anchor('usuario/dashboard', 'Voltar para o dashboard'); ?>
+		</p>	
 	<?=form_close();?>
 </fieldset>

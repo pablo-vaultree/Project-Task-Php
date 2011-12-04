@@ -41,8 +41,8 @@ Class Tarefa extends CI_Controller
 		);				
 						
 		$this->tarefa_model->adicionar_tarefa($data);		
- 		$data['content'] = 'projeto/'.$this->input->post('projetoId');			
-		$this->load->view('includes/template', $data);		
+ 		$url = 'projeto/index/'.$this->input->post('projetoId');			
+		redirect($url);			
 	}
 }
 

@@ -1,26 +1,26 @@
-<div id="header">
-	<p>
-		Bem vindo, <?=$usuario?>.
-	</p>
-	
-	<div>
-		<?= anchor('login/logoff', 'Sair') ?>
-	</div>
-</div>
-
+<?
+$atts_links = array('class' => 'menuButton');
+?>
 
 <div id="dashboard">
-		
+	
+	<p>
+		<?= anchor('projeto/novo', 'Novo Projeto', $atts_links) ?>		
+	</p>		
 	<?if (isset($projetos)) {?>
 		<div id="projetos">					
-			<?foreach ($projetos as $projeto) {
-				echo anchor('projeto/index/'.$projeto->id, $projeto->nome);
-			}?>	
+			<ul>
+			<?foreach ($projetos as $projeto) {?>
+				<li>
+					<?= anchor('projeto/index/'.$projeto->id, $projeto->nome, $atts_links);?>
+				</li>				
+			<?}?>	
+			</ul>
 		</div>
 	<?}else{?>
 		<p>
-			Sem projetos? <?= anchor('projeto/novo', 'Novo Projeto') ?>
+			Sem projetos cadastrados, crie um novo e comece a organizar-se! 
 		</p>				
 	<?}?>
-		
+	
 </div>

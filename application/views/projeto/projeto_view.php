@@ -1,35 +1,44 @@
+<?
+$atts_links = array('class' => 'menuButton');
+?>
 <div id='projeto'>
-	<fieldset>
-		<legend>Informações do projeto: <?=$projeto->nome?></legend>		
-		<p>
-			Data:<br />
-			<?=$projeto->data?>
-		</p>
-		
-		<p>
-			Previsão encerramento:<br />
-			<?=$projeto->data_encerramento?>
-		</p>
-		
-		<p>
-			Observações:<br />
-			<?=$projeto->observacao?>
-		</p>		
-	</fieldset>
+	Informações do projeto: <b><?=$projeto->nome?></b>
 	
+	<p>
+		Data: <b><?=$projeto->data?></b> 
+	</p>
+	
+	<p>
+		Previsão encerramento: <b><?=$projeto->data_encerramento?></b> 
+	</p>
+	
+	<p>
+		Observações:<br />
+		<p><b><?=$projeto->observacao?></b></p>	 
+	</p>	
+
 	<div id='tarefas'>
+		<p>
+			<?= anchor('tarefa/novo/'.$projeto->id, 'Nova Tarefa', $atts_links)?>
+		</p>
 		
 		<?if (isset($tarefas)) {?>
-			<?
-			foreach ($tarefas as $tarefa) {
-				echo anchor('tarefa/'.$tarefa->id, $tarefa->nome);
-			}?>		
+			<ul>
+			<?foreach ($tarefas as $tarefa) {?>
+				<li>
+					<?echo anchor('tarefa/index/'.$tarefa->id, $tarefa->nome, $atts_links);?>
+				</li>				
+			<?}?>
+			</ul>				
 		<?}else{?>
 			<p>
 				Não existem tarefas cadastradas para este projeto.
 			</p>
 		<?}?>
-		
-		<?= anchor('tarefa/novo/'.$projeto->id, 'Nova Tarefa')?>
+				
 	</div>
+	
+	<p>
+		<?echo anchor('usuario/dashboard', 'Voltar para o dashboard', $atts_links); ?>
+	</p>
 </div>
