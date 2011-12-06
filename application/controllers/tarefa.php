@@ -78,6 +78,13 @@ Class Tarefa extends CI_Controller
 		$url = 'projeto/index/'.$projeto;
 		redirect($url);	;		
 	}
+	
+	public function concluir($id)
+	{
+		$this->tarefa_model->concluir_tarefa($id);			
+		$data['message'] = '<div class="Success">Tarefa concluida com sucesso!</div>';		
+		$this->index($id);
+	}
 }
 
 

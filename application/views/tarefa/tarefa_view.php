@@ -1,5 +1,10 @@
 <?
 $atts_links = array('class' => 'menuButton');
+if ($tarefa->concluido == 'S') {
+	$concluida = 'Concluída';
+}else {
+	$concluida = 'Não concluída';
+}
 ?>
 <div id='tarefa'>
 	<fieldset>
@@ -13,6 +18,10 @@ $atts_links = array('class' => 'menuButton');
 		</p>
 		
 		<p>
+			Concluída: <b><?=$concluida;?></b>
+		</p>
+		
+		<p>
 			Previsão encerramento: <b><?=$tarefa->data_encerramento?></b>
 		</p>
 		
@@ -21,7 +30,12 @@ $atts_links = array('class' => 'menuButton');
 			<p><b><?=$tarefa->descricao?><b/></b>
 		</p>					
 	</fieldset>	
-	<p>
+	<p>		
+		<?
+		if ($tarefa->concluido == 'N') {
+			echo anchor('tarefa/concluir/'.$tarefa->id, 'Concluir tarefa', $atts_links);	
+		}		
+		?>
 		<?echo anchor('projeto/index/'.$projeto->id, 'Voltar para o projeto', $atts_links);?>
 	</p>
 </div>

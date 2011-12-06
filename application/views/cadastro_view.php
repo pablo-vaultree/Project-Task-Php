@@ -15,12 +15,13 @@
 				Email<br/>
 				<input type="text" id="email" name="email"/>
 			</p>
+						
+			<?= validation_errors('<p class="error">');?>
 			
 			<P>				
-				<input type="submit" name="cadastrar" id="cadastrar" value="Cadastrar"/>								
-			</P>			
-			<?= validation_errors('<p class="error">');?>
-								
+				<input type="submit" name="cadastrar" id="cadastrar" value="Cadastrar"/>
+				<?echo anchor('login/index/', 'Voltar');?>									
+			</P>						
 		<?=form_close();?>
 	</fieldset>
 	

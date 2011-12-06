@@ -31,9 +31,7 @@
 				</P>			
 				<div class="error"><?=$erro?></div>					
 			<?=form_close();?>
-		</div>
-		
-		<?=$this->load->view('includes/footer');?>
+		</div>			
 	</div>
 </body>
 </html>

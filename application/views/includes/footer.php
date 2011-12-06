@@ -1,6 +1,10 @@
 		</div>
 		<div id="footer">
-			Page rendered in <strong>{elapsed_time}</strong> seconds
+			<?				
+				if (isset($footer_message)) {
+					echo $footer_message;
+				}			
+			?>			
 		</div>
 	</div>
 

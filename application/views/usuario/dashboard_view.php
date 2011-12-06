@@ -16,10 +16,19 @@ $atts_links = array('class' => 'menuButton');
 			<legend>Seus projetos</legend>				
 			<?if (isset($projetos) && !empty($projetos)) {?>			
 				<table>
-				<?foreach ($projetos as $projeto) {?>
+				<?foreach ($projetos as $projeto) {?>					
 					<tr>						
 						<td>
 							<?echo anchor('projeto/index/'.$projeto->id, $projeto->nome);?>
+						</td>
+						<td>
+							<?
+								if ($projeto->concluido == 'N') {
+									echo '<b>Tarefas em aberto</b>';
+								}else {
+									echo '<b>Concluído</b>';
+								}
+							?>
 						</td>
 						<td>
 							<?= $projeto->data_encerramento;?>

@@ -44,13 +44,32 @@ class Usuario_model extends CI_Model
 		$this->db->delete('usuario');		
 	}
 	
+	function se_logado_redirect_dashboard()
+	{
+		$logged = $this->session->userdata('is_logged');				
+		if (isset($logged) && $logged == true) {
+			redirect('usuario/dashboard');			
+		}				
+	}
+	
 	function is_logged()
 	{
 		$logged = $this->session->userdata('is_logged');
 		
 		if (!isset($logged) || $logged == false) {
 			redirect('login/permission_denied');			
-		}
+		}				
+	}
+		
+	function buscar_mensagem_footer()
+	{
+		$nro_projetos = $this->projeto_model->qtde_projetos_abertos($this->session->userdata('username'));
+		if ($nro_projetos > 0) {
+			return "<b>".$nro_projetos." projeto(s) em aberto.</b>";
+		}else {
+			return "<b>Sem projetos cadastrados, ".anchor('projeto/novo','Cadastre um novo projeto aqui')."</b>";
+		}	
+		
 	}
 	
 }

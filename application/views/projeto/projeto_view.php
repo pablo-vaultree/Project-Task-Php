@@ -1,7 +1,7 @@
 <?
 $atts_links = array('class' => 'menuButton');
 ?>
-<div id='projeto'>
+<div id='projeto'>	
 	Informações do projeto: <b><?=$projeto->nome?></b>
 	
 	<p>

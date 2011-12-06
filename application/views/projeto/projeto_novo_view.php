@@ -14,14 +14,19 @@
 			Observações<br/>
 			<textarea cols="40" rows="10" id="obs" name="obs"></textarea>
 		</p>
-		
-		<P>				
-			<input type="submit" name="salvar" id="salvar" value="Salvar"/>								
-		</P>			
+			
 		<?= validation_errors('<p class="error">');?>
 		
-		<p>
-			<?echo anchor('usuario/dashboard', 'Voltar para o dashboard'); ?>
-		</p>	
+		<P>				
+			<input type="submit" name="salvar" id="salvar" value="Salvar"/>
+			<?echo anchor('usuario/dashboard', 'Voltar para o dashboard'); ?>								
+		</P>
+						
 	<?=form_close();?>
 </fieldset>
+
+<script>
+	$(document).ready(function() {
+    	$("#dt_fim").datepicker();
+  	});
+</script>

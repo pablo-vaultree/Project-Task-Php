@@ -1,3 +1,4 @@
+<?=$message;?>
 <?=form_open('tarefa/incluir');?>
 	<fieldset>
 		<legend>Informe os dados da nova tarefa</legend>		
@@ -14,18 +15,22 @@
 		<p>
 			Data de encerramento<br/>
 			<input type="text" id="dt_fim" name="dt_fim"/>
-		</p>		
-		
-		<P>				
-			<input type="submit" name="salvar" id="salvar" value="Salvar"/>								
-		</P>			
-		
-		<input type="hidden" name="projetoId" value="<?=$projeto?>" />
+		</p>					
+			
 		<?= validation_errors('<p class="error">');?>
-		<?=$message;?>
+			
+		<P>				
+			<input type="submit" name="salvar" id="salvar" value="Salvar"/>
+			<?echo anchor('projeto/index/'.$projeto, 'Voltar para o projeto');?>								
+		</P>					
 	</fieldset>
-	<p>
-		<?echo anchor('projeto/index/'.$projeto, 'Voltar para o projeto');?>
-	</p>	
+	
+	<input type="hidden" name="projetoId" value="<?=$projeto?>" />	
 <?=form_close();?>
+
+<script>
+	$(document).ready(function() {
+    	$("#dt_fim").datepicker();
+  	});
+</script>
 
